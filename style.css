@@ -540,3 +540,56 @@ body::before {
   }
 }
 
+/* ================= RTL SUPPORT ================= */
+
+.rtl-mode {
+  text-align: right;
+}
+
+.rtl-mode .timeline {
+  direction: rtl;
+}
+
+.rtl-mode .timeline::before {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.rtl-mode .timeline-item::before {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.rtl-mode .card {
+  text-align: right;
+}
+
+/* Flip microchip pins for RTL */
+.rtl-mode .timeline .card::before {
+  left: auto;
+  right: -26px;
+}
+
+.rtl-mode .timeline .card::after {
+  right: auto;
+  left: -26px;
+}
+
+.translate-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(102, 255, 138, 0.4);
+}
+
+.rtl-mode .translate-box {
+  right: auto;
+  left: 20px;
+}
